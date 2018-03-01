@@ -1,0 +1,13 @@
+
+sudo nano /var/lib/dpkg/info/icaclient.postinst
+
+echo $Arch|grep "i[0-9]86" >/dev/null
+
+Replace with
+echo $Arch|grep -E "i[0-9]86|x86_64" >/dev/null
+
+save and exit
+
+
+sudo dpkg --configure icaclient
+
